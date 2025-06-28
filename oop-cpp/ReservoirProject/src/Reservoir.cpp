@@ -36,3 +36,10 @@ Reservoir::Reservoir(const Reservoir& other) {
 
 Reservoir::~Reservoir() {}
 
+double Reservoir::getVolume() const {
+    return width * length * maxDepth;
+}
+
+double Reservoir::getArea() const {
+    return width * length;
+}
