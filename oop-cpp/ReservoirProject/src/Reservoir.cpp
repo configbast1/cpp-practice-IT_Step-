@@ -86,3 +86,14 @@ void Reservoir::print() const {
               << "\nПлощадь: " << getArea() << "\n";
 }
 
+void Reservoir::setName(const char* _name) {
+    for (int i = 0; i < 50; i++) {
+        if (_name[i] == '\0') { name[i] = '\0'; break; }
+        name[i] = _name[i];
+    }
+}
+
+const char* Reservoir::getName() const {
+    return name;
+}
+
