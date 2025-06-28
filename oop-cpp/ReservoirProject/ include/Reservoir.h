@@ -22,3 +22,17 @@ public:
     explicit Reservoir(const char* _name, const char* _type, double _width, double _length, double _maxDepth);
     Reservoir(const Reservoir& other);
     ~Reservoir(); 
+  double getVolume() const;
+    double getArea() const;
+    bool isSameType(const Reservoir& other) const;
+    int compareArea(const Reservoir& other) const;
+
+    void input();
+    void print() const;
+
+    void setName(const char* _name);
+    const char* getName() const;
+
+    void saveToText() const;
+    void saveToBinary() const;
+};
