@@ -17,3 +17,8 @@ private:
     double width;
     double length;
     double maxDepth;
+public:
+    Reservoir();
+    explicit Reservoir(const char* _name, const char* _type, double _width, double _length, double _maxDepth);
+    Reservoir(const Reservoir& other);
+    ~Reservoir(); 
