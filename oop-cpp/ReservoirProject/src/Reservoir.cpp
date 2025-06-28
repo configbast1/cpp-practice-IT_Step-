@@ -42,4 +42,20 @@ double Reservoir::getVolume() const {
 
 double Reservoir::getArea() const {
     return width * length;
+} 
+
+bool Reservoir::isSameType(const Reservoir& other) const {
+    for (int i = 0; i < 50; i++) {
+        if (type[i] != other.type[i]) return false;
+        if (type[i] == '\0' && other.type[i] == '\0') break;
+    }
+    return true;
 }
+
+int Reservoir::compareArea(const Reservoir& other) const {
+    if (!isSameType(other)) return -2;
+    if (getArea() > other.getArea()) return 1;
+    else if (getArea() < other.getArea()) return -1;
+    else return 0;
+}
+
