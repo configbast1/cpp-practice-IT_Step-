@@ -59,3 +59,30 @@ int Reservoir::compareArea(const Reservoir& other) const {
     else return 0;
 }
 
+void Reservoir::input() {
+    std::cout << "Введите название: ";
+    std::cin >> name;
+
+    std::cout << "Введите тип: ";
+    std::cin >> type;
+
+    std::cout << "Введите ширину: ";
+    std::cin >> width;
+
+    std::cout << "Введите длину: ";
+    std::cin >> length;
+
+    std::cout << "Введите максимальную глубину: ";
+    std::cin >> maxDepth;
+}
+
+void Reservoir::print() const {
+    std::cout << "Название: " << name
+              << "\nТип: " << type
+              << "\nШирина: " << width
+              << "\nДлина: " << length
+              << "\nМакс. глубина: " << maxDepth
+              << "\nОбъем: " << getVolume()
+              << "\nПлощадь: " << getArea() << "\n";
+}
+
