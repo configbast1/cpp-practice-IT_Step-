@@ -97,3 +97,21 @@ const char* Reservoir::getName() const {
     return name;
 }
 
+void Reservoir::saveToText() const {
+    FILE* f;
+    fopen_s(&f, "reservoirs.txt", "a");
+    if (f) {
+        fprintf_s(f, "%s %s %.2lf %.2lf %.2lf\n", name, type, width, length, maxDepth);
+        fclose(f);
+    }
+}
+
+void Reservoir::saveToBinary() const {
+    FILE* f;
+    fopen_s(&f, "reservoirs.bin", "ab");
+    if (f) {
+        fwrite(this, sizeof(Reservoir), 1, f);
+        fclose(f);
+    }
+}
+
