@@ -14,4 +14,7 @@ int main() {
     cout << "s4: " << s4 << endl;
     MyString s5; 
     s5 = s4;
-    cout << "s5: " << s5 << endl;
+    cout << "s5: " << s5 << endl; 
+    MyString s6;
+    s6 = MyString("MovedString");
+    cout << "s6: " << s6 << endl;
