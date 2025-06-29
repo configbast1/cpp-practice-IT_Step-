@@ -76,3 +76,7 @@ MyString MyString::operator+(const MyString& other) {
 
     return result;
 }
+
+char& MyString::operator[](int index) {
+    return str[index];
+}
