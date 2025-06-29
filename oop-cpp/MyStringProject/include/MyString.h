@@ -10,7 +10,8 @@ private:
 public:
     MyString();      
     MyString(int size); 
-
-  MyString(const char* s);
+    MyString(const char* s);
+    MyString(const MyString& other);
+    MyString(MyString&& other);     
 
 };
