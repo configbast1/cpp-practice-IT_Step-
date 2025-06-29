@@ -11,4 +11,6 @@ public:
     MyString();      
     MyString(int size); 
 
+  MyString(const char* s);
+
 };
