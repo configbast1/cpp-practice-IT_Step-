@@ -84,4 +84,20 @@ char& MyString::operator[](int index) {
 int MyString::getLength() const {
     return length;
 }
- 
+
+ostream& operator<<(ostream& out, const MyString& s) {
+    out << s.str;
+    return out;
+}
+
+istream& operator>>(istream& in, MyString& s) {
+    char buffer[256];
+    in >> buffer;
+
+    delete[] s.str;
+    s.length = mystrlen(buffer);
+    s.str = new char[s.length + 1];
+    mystrcpy(s.str, buffer);
+
+    return in;
+}
