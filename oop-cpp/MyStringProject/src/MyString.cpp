@@ -80,3 +80,8 @@ MyString MyString::operator+(const MyString& other) {
 char& MyString::operator[](int index) {
     return str[index];
 }
+
+int MyString::getLength() const {
+    return length;
+}
+ 
