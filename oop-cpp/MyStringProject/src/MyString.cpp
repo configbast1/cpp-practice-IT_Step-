@@ -8,15 +8,15 @@ MyString::MyString() {
     length = 0;
 }
 
-
 MyString::MyString(int size) {
     length = size;
     str = new char[length + 1];
     str[0] = '\0'; 
+    
+}
 
 MyString::MyString(const char* s) {
     length = mystrlen(s);
     str = new char[length + 1];
     mystrcpy(str, s);
-}
 }
