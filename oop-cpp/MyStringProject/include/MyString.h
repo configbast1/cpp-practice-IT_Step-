@@ -20,5 +20,7 @@ public:
     MyString& operator=(MyString&& other);
     MyString operator+(const MyString& other);
     char& operator[](int index);
-
+    friend ostream& operator<<(ostream& out, const MyString& s);
+    friend istream& operator>>(istream& in, MyString& s);
+    
 };
