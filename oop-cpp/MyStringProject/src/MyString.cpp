@@ -33,3 +33,7 @@ MyString::MyString(MyString&& other) {
     other.str = nullptr;
     other.length = 0;
 }
+
+MyString::~MyString() {
+    delete[] str;
+}
