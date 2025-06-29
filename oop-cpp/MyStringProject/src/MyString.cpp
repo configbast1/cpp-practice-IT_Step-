@@ -20,3 +20,9 @@ MyString::MyString(const char* s) {
     str = new char[length + 1];
     mystrcpy(str, s);
 }
+
+MyString::MyString(const MyString& other) {
+    length = other.length;
+    str = new char[length + 1];
+    mystrcpy(str, other.str);
+}
