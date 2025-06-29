@@ -12,3 +12,6 @@ int main() {
     cout << "s3: " << s3 << endl;
     MyString s4 = s1 + s3;
     cout << "s4: " << s4 << endl;
+    MyString s5; 
+    s5 = s4;
+    cout << "s5: " << s5 << endl;
