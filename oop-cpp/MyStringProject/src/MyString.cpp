@@ -47,3 +47,14 @@ MyString& MyString::operator=(const MyString& other) {
     }
     return *this;
 }
+
+MyString& MyString::operator=(MyString&& other) {
+    if (this != &other) {
+        delete[] str;
+        length = other.length;
+        str = other.str;
+        other.str = nullptr;
+        other.length = 0;
+    }
+    return *this;
+}
