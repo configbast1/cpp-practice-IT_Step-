@@ -26,3 +26,10 @@ MyString::MyString(const MyString& other) {
     str = new char[length + 1];
     mystrcpy(str, other.str);
 }
+
+MyString::MyString(MyString&& other) {
+    length = other.length;
+    str = other.str;
+    other.str = nullptr;
+    other.length = 0;
+}
