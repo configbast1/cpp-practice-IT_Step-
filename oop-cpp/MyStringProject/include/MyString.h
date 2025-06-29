@@ -22,5 +22,6 @@ public:
     char& operator[](int index);
     friend ostream& operator<<(ostream& out, const MyString& s);
     friend istream& operator>>(istream& in, MyString& s);
-    
+
+    int getLength() const;
 };
