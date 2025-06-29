@@ -7,4 +7,8 @@ class MyString {
 private:
     char* str;  
     int length;  
+public:
+    MyString();      
+    MyString(int size); 
+
 };
