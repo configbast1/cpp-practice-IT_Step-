@@ -16,4 +16,7 @@ public:
 
     ~MyString();
 
+    MyString& operator=(const MyString& other);
+    MyString& operator=(MyString&& other);
+
 };
