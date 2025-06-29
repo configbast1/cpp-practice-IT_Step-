@@ -20,3 +20,7 @@ int main() {
     cout << "s6: " << s6 << endl;
     cout << "s4[1]: " << s4[1] << endl;
     cout << "Length of s4: " << s4.getLength() << endl; 
+    MyString input;
+    cout << "Enter a string: ";
+    cin >> input;
+    cout << "You entered: " << input << endl;
