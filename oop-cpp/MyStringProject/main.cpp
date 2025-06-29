@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int main() {
+int main() { 
+ return 0;
     MyString s1("Hello");
     cout << "s1: " << s1 << endl; 
     MyString s2 = s1;
