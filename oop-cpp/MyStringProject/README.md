@@ -11,3 +11,12 @@
 - Управление динамической памятью
 - Семантика копирования и переноса (C++11)
 - Перегрузка операторов
+
+## 🔗 Быстрые ссылки на файлы
+
+- 🗂️ [include/MyString.h](./include/MyString.h)
+- 🗂️ [include/MyStringHelpers.h](./include/MyStringHelpers.h)
+- 🗂️ [src/MyString.cpp](./src/MyString.cpp)
+- 🗂️ [src/MyStringHelpers.cpp](./src/MyStringHelpers.cpp)
+- 🗂️ [main.cpp](./main.cpp)
+
