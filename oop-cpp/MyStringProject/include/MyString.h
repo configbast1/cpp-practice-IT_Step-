@@ -18,5 +18,7 @@ public:
 
     MyString& operator=(const MyString& other);
     MyString& operator=(MyString&& other);
+    MyString operator+(const MyString& other);
+    char& operator[](int index);
 
 };
