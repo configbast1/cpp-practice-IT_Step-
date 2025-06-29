@@ -58,3 +58,21 @@ MyString& MyString::operator=(MyString&& other) {
     }
     return *this;
 }
+
+MyString MyString::operator+(const MyString& other) {
+    int newLength = length + other.length;
+    MyString result(newLength);
+
+    mystrcpy(result.str, str);
+
+    int i = 0;
+    while (result.str[i] != '\0') ++i;
+
+    const char* p = other.str;
+    while (*p) {
+        result.str[i++] = *p++;
+    }
+    result.str[i] = '\0';
+
+    return result;
+}
