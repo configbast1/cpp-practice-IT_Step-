@@ -14,4 +14,6 @@ public:
     MyString(const MyString& other);
     MyString(MyString&& other);     
 
+    ~MyString();
+
 };
