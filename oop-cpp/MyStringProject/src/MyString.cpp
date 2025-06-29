@@ -36,4 +36,14 @@ MyString::MyString(MyString&& other) {
 
 MyString::~MyString() {
     delete[] str;
+} 
+
+MyString& MyString::operator=(const MyString& other) {
+    if (this != &other) {
+        delete[] str;
+        length = other.length;
+        str = new char[length + 1];
+        mystrcpy(str, other.str);
+    }
+    return *this;
 }
