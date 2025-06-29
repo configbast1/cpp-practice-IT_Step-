@@ -10,3 +10,5 @@ int main() {
     cout << "s2: " << s2 << endl;
     MyString s3 = MyString("World");
     cout << "s3: " << s3 << endl;
+    MyString s4 = s1 + s3;
+    cout << "s4: " << s4 << endl;
