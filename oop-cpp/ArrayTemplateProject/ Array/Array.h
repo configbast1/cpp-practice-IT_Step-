@@ -57,3 +57,9 @@ void SetSize(int newSize, int newGrow = 1) {
         delete[] data;
         data = newData;
     }
+
+ void RemoveAll() {
+        delete[] data;
+        data = nullptr;
+        size = 0;
+    }
