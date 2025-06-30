@@ -39,3 +39,12 @@ void SetSize(int newSize, int newGrow = 1) {
         data = newData;
         size = newSize;
     }
+
+ int GetUpperBound() const {
+        return size - 1;
+    }
+
+    // Проверить пустой ли массив
+    bool IsEmpty() const {
+        return size == 0;
+    }
