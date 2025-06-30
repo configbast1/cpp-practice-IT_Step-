@@ -44,7 +44,16 @@ void SetSize(int newSize, int newGrow = 1) {
         return size - 1;
     }
 
-    // Проверить пустой ли массив
+   
     bool IsEmpty() const {
         return size == 0;
+    }
+
+ void FreeExtra() {
+        T* newData = new T[size];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        delete[] data;
+        data = newData;
     }
