@@ -20,3 +20,6 @@ public:
  ~Array() {
         delete[] data;
     }
+int GetSize() const {
+        return size;
+    }
