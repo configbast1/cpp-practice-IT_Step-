@@ -23,3 +23,19 @@ public:
 int GetSize() const {
         return size;
     }
+
+void SetSize(int newSize, int newGrow = 1) {
+        if (newSize < 0) return;
+        grow = newGrow;
+
+        T* newData = new T[newSize];
+        int minSize = (newSize < size) ? newSize : size;
+
+        for (int i = 0; i < minSize; i++) {
+            newData[i] = data[i];
+        }
+
+        delete[] data;
+        data = newData;
+        size = newSize;
+    }
