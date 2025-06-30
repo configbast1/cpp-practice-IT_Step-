@@ -10,9 +10,13 @@ private:
     int size;         
     int grow;          
 public:
-    // Конструктор по умолчанию
+   
     Array() {
         data = nullptr;
         size = 0;
         grow = 1;  
+    }
+
+ ~Array() {
+        delete[] data;
     }
