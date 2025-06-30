@@ -63,3 +63,11 @@ void SetSize(int newSize, int newGrow = 1) {
         data = nullptr;
         size = 0;
     }
+
+ T GetAt(int index) const {
+        if (index >= 0 && index < size) {
+            return data[index];
+        }
+       
+        return T();
+    }
