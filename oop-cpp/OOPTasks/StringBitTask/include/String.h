@@ -14,4 +14,5 @@ public:
     String(const String& other);
     String& operator=(const String& other);
 
+    ~String();
     
