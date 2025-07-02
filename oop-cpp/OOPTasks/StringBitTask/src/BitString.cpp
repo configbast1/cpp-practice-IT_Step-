@@ -19,3 +19,5 @@ BitString::BitString(const char* str) : String() {
         clear();
     }
 }
+
+BitString::BitString(const BitString& other) : String(other) {} 
