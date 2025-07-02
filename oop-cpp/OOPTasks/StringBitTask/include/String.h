@@ -15,4 +15,7 @@ public:
     String& operator=(const String& other);
 
     ~String();
-    
+
+    int length() const;
+    void clear();
+
