@@ -21,3 +21,6 @@ public:
 
     String operator+(const String& other) const;
     String& operator+=(const String& other);
+
+  void print() const;
+};
