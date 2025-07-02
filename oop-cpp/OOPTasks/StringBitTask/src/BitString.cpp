@@ -28,3 +28,5 @@ BitString& BitString::operator=(const BitString& other) {
     }
     return *this;
 }
+
+BitString::~BitString() {}
