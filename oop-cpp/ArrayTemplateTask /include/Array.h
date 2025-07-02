@@ -34,3 +34,11 @@ T GetAt(int index) const;
     void InsertAt(int index, const T& value);
     void RemoveAt(int index);
 };
+
+template <typename T>
+Array<T>::Array() : data(nullptr), size(0), grow(1), upperBound(-1) {}
+
+template <typename T>
+Array<T>::~Array() {
+    delete[] data;
+}
