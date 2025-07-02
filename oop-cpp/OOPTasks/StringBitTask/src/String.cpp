@@ -56,3 +56,11 @@ String& String::operator+=(const String& other) {
     data = newData;
     return *this;
 }
+
+bool String::operator==(const String& other) const {
+    return strcmp(data, other.data) == 0;
+}
+
+bool String::operator!=(const String& other) const {
+    return !(*this == other);
+}
