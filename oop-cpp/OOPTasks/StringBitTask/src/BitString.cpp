@@ -48,3 +48,9 @@ void BitString::ChangeSign() {
         }
     }
 }
+
+BitString BitString::operator+(const BitString& other) const {
+    String temp(*this);
+    temp += other;
+    return BitString(temp.GetData());
+}
