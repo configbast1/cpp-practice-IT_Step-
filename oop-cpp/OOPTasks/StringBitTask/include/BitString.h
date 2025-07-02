@@ -15,7 +15,7 @@ public:
       BitString& operator+=(const BitString& other); 
       bool operator==(const BitString& other) const;
       bool operator!=(const BitString& other) const;
-
+      void print() const;
 };
 
 #endif
