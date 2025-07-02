@@ -8,9 +8,9 @@ public:
       BitString();
       BitString(const char* str);
       BitString(const BitString& other);
-      BitString& operator=(const BitString& other);
-
-
+      BitString& operator=(const BitString& other); 
+      ~BitString();
+      
 
 };
 
