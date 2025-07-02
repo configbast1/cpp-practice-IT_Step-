@@ -42,3 +42,5 @@ template <typename T>
 Array<T>::~Array() {
     delete[] data;
 }
+
+#endif
