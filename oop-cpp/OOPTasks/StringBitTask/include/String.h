@@ -19,3 +19,5 @@ public:
     int length() const;
     void clear();
 
+    String operator+(const String& other) const;
+    String& operator+=(const String& other);
