@@ -1,1 +1,22 @@
+#include "../include/String.h"
+#include <cstring>
+
+String::String() {
+    data = new char[1];
+    data[0] = '\0';
+}
+
+String::String(const char* str) {
+    data = new char[strlen(str) + 1];
+    strcpy(data, str);
+}
+
+String::String(const String& other) {
+    data = new char[strlen(other.data) + 1];
+    strcpy(data, other.data);
+}
+
+String::~String() {
+    delete[] data;
+}
 
