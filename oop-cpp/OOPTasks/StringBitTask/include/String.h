@@ -3,3 +3,7 @@
 
 #include <iostream>
 #include <cstring>
+
+class String {
+protected:
+    char* data;
