@@ -13,6 +13,8 @@ public:
       void ChangeSign(); 
       BitString operator+(const BitString& other) const;
       BitString& operator+=(const BitString& other); 
+      bool operator==(const BitString& other) const;
+      bool operator!=(const BitString& other) const;
 
 };
 
