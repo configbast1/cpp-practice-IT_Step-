@@ -15,3 +15,9 @@ public:
     Array();
     ~Array();
 
+ int GetSize() const;
+    void SetSize(int size, int grow = 1);
+    int GetUpperBound() const;
+    bool IsEmpty() const;
+    void FreeExtra();
+    void RemoveAll();
