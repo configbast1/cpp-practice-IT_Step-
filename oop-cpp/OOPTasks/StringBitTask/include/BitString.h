@@ -5,6 +5,7 @@
 
 class BitString : public String {
 public: 
+      BitString();
 
 
 
