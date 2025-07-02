@@ -6,4 +6,8 @@ int main() {
     str1.print(); 
 
 String str2("Hello");
-    str2.print();
+    str2.print(); 
+
+String str3(str2);
+    str3.print();
+
