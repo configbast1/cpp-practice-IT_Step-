@@ -19,10 +19,3 @@
 ---
 ## 📊 GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=configbast1&show_icons=true&theme=tokyonight" alt="GitHub Stats"/>
-</p>
-
-## 🏆 Languages
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=configbast1&layout=compact&theme=tokyonight)
