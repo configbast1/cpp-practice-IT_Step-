@@ -54,3 +54,20 @@ BitString BitString::operator+(const BitString& other) const {
     temp += other;
     return BitString(temp.GetData());
 }
+
+BitString& BitString::operator+=(const BitString& other) {
+    String::operator+=(other);
+    return *this;
+}
+
+bool BitString::operator==(const BitString& other) const {
+    return String::operator==(other);
+}
+
+bool BitString::operator!=(const BitString& other) const {
+    return !(*this == other);
+}
+
+void BitString::print() const {
+    std::cout << data << std::endl;
+}
