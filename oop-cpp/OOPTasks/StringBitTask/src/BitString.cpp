@@ -21,3 +21,10 @@ BitString::BitString(const char* str) : String() {
 }
 
 BitString::BitString(const BitString& other) : String(other) {} 
+
+BitString& BitString::operator=(const BitString& other) {
+    if (this != &other) {
+        String::operator=(other);
+    }
+    return *this;
+}
