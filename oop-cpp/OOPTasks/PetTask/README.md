@@ -16,6 +16,13 @@
 - [Parrot.h](./include/Parrot.h)
 - [main.cpp](./main.cpp)
 
+<p align="center"> 
+- [Pet.h](./include/Pet.h)
+- [Dog.h](./include/Dog.h)
+- [Cat.h](./include/Cat.h)
+- [Parrot.h](./include/Parrot.h)
+- [main.cpp](./main.cpp)
+</p>
+
 ---
-## 📊 GitHub Stats
 
