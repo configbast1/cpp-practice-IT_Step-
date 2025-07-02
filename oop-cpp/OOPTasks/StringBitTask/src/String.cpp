@@ -20,3 +20,11 @@ String::~String() {
     delete[] data;
 }
 
+String& String::operator=(const String& other) {
+    if (this != &other) {
+        delete[] data;
+        data = new char[strlen(other.data) + 1];
+        strcpy(data, other.data);
+    }
+    return *this;
+}
