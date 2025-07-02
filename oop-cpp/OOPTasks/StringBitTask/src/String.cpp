@@ -28,3 +28,13 @@ String& String::operator=(const String& other) {
     }
     return *this;
 }
+
+int String::length() const {
+    return strlen(data);
+}
+
+void String::clear() {
+    delete[] data;
+    data = new char[1];
+    data[0] = '\0';
+}
