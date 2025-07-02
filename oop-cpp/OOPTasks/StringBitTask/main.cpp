@@ -11,3 +11,5 @@ String str2("Hello");
 String str3(str2);
     str3.print();
 
+str1 = str2;
+    str1.print(); 
