@@ -10,7 +10,7 @@ public:
       BitString(const BitString& other);
       BitString& operator=(const BitString& other); 
       ~BitString();
-      
+       void ChangeSign();
 
 };
 
