@@ -38,3 +38,21 @@ void String::clear() {
     data = new char[1];
     data[0] = '\0';
 }
+
+String String::operator+(const String& other) const {
+    char* newData = new char[strlen(data) + strlen(other.data) + 1];
+    strcpy(newData, data);
+    strcat(newData, other.data);
+    String result(newData);
+    delete[] newData;
+    return result;
+}
+
+String& String::operator+=(const String& other) {
+    char* newData = new char[strlen(data) + strlen(other.data) + 1];
+    strcpy(newData, data);
+    strcat(newData, other.data);
+    delete[] data;
+    data = newData;
+    return *this;
+}
