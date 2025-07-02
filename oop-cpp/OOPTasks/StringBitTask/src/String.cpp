@@ -64,3 +64,7 @@ bool String::operator==(const String& other) const {
 bool String::operator!=(const String& other) const {
     return !(*this == other);
 }
+
+void String::print() const {
+    std::cout << data << std::endl;
+}
