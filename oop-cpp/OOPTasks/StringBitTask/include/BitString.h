@@ -6,9 +6,8 @@
 class BitString : public String {
 public: 
       BitString();
-
       BitString(const char* str);
-      
+      BitString(const BitString& other);
 };
 
 #endif
