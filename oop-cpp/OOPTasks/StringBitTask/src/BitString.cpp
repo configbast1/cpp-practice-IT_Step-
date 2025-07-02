@@ -30,3 +30,21 @@ BitString& BitString::operator=(const BitString& other) {
 }
 
 BitString::~BitString() {}
+
+void BitString::ChangeSign() {
+    if (!data || strlen(data) == 0) return;
+
+    for (size_t i = 0; i < strlen(data); ++i) {
+        data[i] = (data[i] == '0') ? '1' : '0';
+    }
+
+    bool carry = true;
+    for (int i = strlen(data) - 1; i >= 0 && carry; --i) {
+        if (data[i] == '0') {
+            data[i] = '1';
+            carry = false;
+        } else {
+            data[i] = '0';
+        }
+    }
+}
