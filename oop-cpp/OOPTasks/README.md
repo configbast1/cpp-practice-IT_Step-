@@ -14,27 +14,3 @@
 | [StringBitTask](./StringBitTask) | ✔️ Класс `String`: работа с C-строками.<br>✔️ Класс `BitString`: наследует `String`, хранит только 0 и 1, реализует перевод в доп. код.<br>🔗 [String.h](./StringBitTask/include/String.h) · [BitString.h](./StringBitTask/include/BitString.h) · [String.cpp](./StringBitTask/src/String.cpp) · [BitString.cpp](./StringBitTask/src/BitString.cpp) · [main.cpp](./StringBitTask/main.cpp) |
 
 ---
-## 📚 Полезно знать
-
-Все проекты имеют простую структуру:
-OOPTasks/
-├── PetTask/
-│ ├── include/
-│ │ ├── Pet.h
-│ │ ├── Dog.h
-│ │ ├── Cat.h
-│ │ ├── Parrot.h
-│ ├── main.cpp
-│ └── README.md
-│
-├── StringBitTask/
-│ ├── include/
-│ │ ├── String.h
-│ │ ├── BitString.h
-│ ├── src/
-│ │ ├── String.cpp
-│ │ ├── BitString.cpp
-│ ├── main.cpp
-│ └── README.md
-│
-└── README.md ← общее описание всех задач
