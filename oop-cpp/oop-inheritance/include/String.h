@@ -10,6 +10,12 @@ private:
     int length;
 
 public:
+    String() : str(nullptr), length(0) {}
+
+~String() {
+    delete[] str;
+}
+
 
 };
 
