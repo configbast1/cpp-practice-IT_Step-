@@ -65,6 +65,13 @@ String& operator+=(const String& other) {
     return *this;
 }
 
+bool operator==(const String& other) const {
+    return std::strcmp(str, other.str) == 0;
+}
+
+bool operator!=(const String& other) const {
+    return !(*this == other);
+}
 
 };
 
