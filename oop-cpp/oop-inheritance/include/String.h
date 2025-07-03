@@ -43,7 +43,13 @@ String& operator=(const String& other) {
     }
     return *this;
 }
+int GetLength() const { return length; }
 
+void Clear() {
+    delete[] str;
+    str = nullptr;
+    length = 0;
+}
 };
 
 #endif
