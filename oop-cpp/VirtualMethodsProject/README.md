@@ -2,9 +2,10 @@
 - **Figure** — базовый абстрактный класс.
 - **Rectangle**, **Circle**, **Triangle** — наследники с переопределением `GetArea()`.
 
-### Файлы проекта:
-- `include/Figure.h`
-- `include/Rectangle.h`
-- `include/Circle.h`
-- `include/Triangle.h`
-- `main.cpp`
+## 📁 Файлы проекта
+
+- [include/Figure.h](./include/Figure.h)
+- [include/Rectangle.h](./include/Rectangle.h)
+- [include/Circle.h](./include/Circle.h)
+- [include/Triangle.h](./include/Triangle.h)
+- [main.cpp](./main.cpp)
