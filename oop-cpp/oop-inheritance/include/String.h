@@ -49,7 +49,23 @@ void Clear() {
     delete[] str;
     str = nullptr;
     length = 0;
+} 
+String operator+(const String& other) const {
+    int newLen = length + other.length;
+    char* newStr = new char[newLen + 1];
+    if (str) std::strcpy(newStr, str);
+    if (other.str) std::strcat(newStr, other.str);
+    String result(newStr);
+    delete[] newStr;
+    return result;
 }
+
+String& operator+=(const String& other) {
+    *this = *this + other;
+    return *this;
+}
+
+
 };
 
 #endif
