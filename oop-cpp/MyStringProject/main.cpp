@@ -1,27 +1,28 @@
 #include <iostream>
-#include "include/MyString.h"
+#include <Windows.h>
+#include "MyString.h"
 
 using namespace std;
 
-int main() { 
- return 0;
-    MyString s1("Hello");
-    cout << "s1: " << s1 << endl; 
-    MyString s2 = s1;
+int main() {
+    SetConsoleOutputCP(1251);
+
+    MyString s1("Привет");
+    MyString s2(" Мир!");
+    MyString s3 = s1 + s2;
+
+    cout << "s1: " << s1 << endl;
     cout << "s2: " << s2 << endl;
-    MyString s3 = MyString("World");
-    cout << "s3: " << s3 << endl;
-    MyString s4 = s1 + s3;
-    cout << "s4: " << s4 << endl;
-    MyString s5; 
-    s5 = s4;
-    cout << "s5: " << s5 << endl; 
-    MyString s6;
-    s6 = MyString("MovedString");
-    cout << "s6: " << s6 << endl;
-    cout << "s4[1]: " << s4[1] << endl;
-    cout << "Length of s4: " << s4.getLength() << endl; 
-    MyString input;
-    cout << "Enter a string: ";
-    cin >> input;
-    cout << "You entered: " << input << endl;
+    cout << "s3 (concat): " << s3 << endl;
+
+    cout << "Длина s3: " << s3.getLength() << endl;
+
+    cout << "s3[0]: " << s3[0] << endl;
+
+    MyString s4;
+    cout << "Введите строку: ";
+    cin >> s4;
+    cout << "Вы ввели: " << s4 << endl;
+
+    return 0;
+}
