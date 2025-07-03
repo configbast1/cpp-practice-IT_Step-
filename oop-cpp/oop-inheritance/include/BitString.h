@@ -35,10 +35,19 @@ public:
         for (int i = 0; i < length; ++i) {
             str[i] = (str[i] == '0') ? '1' : '0';
         }
+    } 
+    BitString& operator+=(const BitString& other) {
+        *this = BitString((*this + other).str);
+        return *this;
     }
 
-    BitString operator+(const BitString& other) const {
-        BitString result(*this);
-        result += other;
-        return result;
+    bool operator==(const BitString& other) const {
+        return String::operator==(other);
     }
+
+    bool operator!=(const BitString& other) const {
+        return !(*this == other);
+    }
+};  
+#endif 
+
