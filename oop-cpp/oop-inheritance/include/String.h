@@ -73,6 +73,14 @@ bool operator!=(const String& other) const {
     return !(*this == other);
 }
 
+void Show() const {
+    if (str) {
+        std::cout << str << "\n";
+    } else {
+        std::cout << "(empty)\n";
+    }
+}
+
 };
 
 #endif
