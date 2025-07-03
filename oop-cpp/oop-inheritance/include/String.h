@@ -15,7 +15,6 @@ public:
 ~String() {
     delete[] str;
 }
-
 String(const char* s) {
     if (s) {
         length = std::strlen(s);
@@ -35,6 +34,15 @@ String(const String& other) {
         str = nullptr;
     }
 } 
+String& operator=(const String& other) {
+    if (this != &other) {
+        delete[] str;
+        length = other.length;
+        str = new char[length + 1];
+        std::strcpy(str, other.str);
+    }
+    return *this;
+}
 
 };
 
