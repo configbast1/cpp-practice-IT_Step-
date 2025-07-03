@@ -80,6 +80,13 @@ void Show() const {
         std::cout << "(empty)\n";
     }
 }
+void Show() const {
+    if (str) {
+        std::cout << str << "\n";
+    } else {
+        std::cout << "(empty)\n";
+    }
+} 
 
 };
 
