@@ -23,6 +23,26 @@ public:
         delete[] data;
     }
 
+    int GetSize() const { return size; }
+
+    void SetSize(int newSize, int newGrow = 1) {
+        if (newGrow > 0) grow = newGrow;
+        if (newSize == size) return;
+
+        T* newData = nullptr;
+        if (newSize > 0)
+            newData = new T[newSize];
+
+        int elementsToCopy = (newSize < count) ? newSize : count;
+
+        for (int i = 0; i < elementsToCopy; ++i)
+            newData[i] = data[i];
+
+        delete[] data;
+        data = newData;
+        size = newSize;
+        if (count > size) count = size;
+    }
 
 };
 #endif 
