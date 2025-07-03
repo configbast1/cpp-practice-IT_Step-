@@ -1,103 +1,111 @@
+#include <iostream>
+#include <cstring>
 #include "MyString.h"
-#include "MyStringHelpers.h"
 
-using namespace std; 
+using namespace std;
 
 MyString::MyString() {
     str = nullptr;
     length = 0;
 }
 
-MyString::MyString(int size) {
+MyString::MyString(size_t size) {
     length = size;
     str = new char[length + 1];
-    str[0] = '\0'; 
-    
+    str[0] = '\0';
 }
-
 MyString::MyString(const char* s) {
-    length = mystrlen(s);
-    str = new char[length + 1];
-    mystrcpy(str, s);
+    if (s) {
+        length = strlen(s);
+        str = new char[length + 1];
+        strcpy_s(str, length + 1, s);
+    }
+    else {
+        str = nullptr;
+        length = 0;
+    }
 }
 
 MyString::MyString(const MyString& other) {
     length = other.length;
-    str = new char[length + 1];
-    mystrcpy(str, other.str);
+    if (length > 0) {
+        str = new char[length + 1];
+        strcpy_s(str, length + 1, other.str);
+    }
+    else {
+        str = nullptr;
+    }
 }
 
-MyString::MyString(MyString&& other) {
-    length = other.length;
+MyString::MyString(MyString&& other) noexcept {
     str = other.str;
+    length = other.length;
     other.str = nullptr;
     other.length = 0;
 }
 
 MyString::~MyString() {
     delete[] str;
-} 
+}
 
 MyString& MyString::operator=(const MyString& other) {
     if (this != &other) {
         delete[] str;
         length = other.length;
         str = new char[length + 1];
-        mystrcpy(str, other.str);
+        strcpy_s(str, length + 1, other.str);
     }
     return *this;
 }
 
-MyString& MyString::operator=(MyString&& other) {
+MyString& MyString::operator=(MyString&& other) noexcept {
     if (this != &other) {
         delete[] str;
-        length = other.length;
         str = other.str;
+        length = other.length;
         other.str = nullptr;
         other.length = 0;
     }
     return *this;
 }
 
-MyString MyString::operator+(const MyString& other) {
-    int newLength = length + other.length;
+MyString MyString::operator+(const MyString& other) const {
+    size_t newLength = length + other.length;
     MyString result(newLength);
 
-    mystrcpy(result.str, str);
-
-    int i = 0;
-    while (result.str[i] != '\0') ++i;
-
-    const char* p = other.str;
-    while (*p) {
-        result.str[i++] = *p++;
+    if (length > 0) {
+        strcpy_s(result.str, length + 1, str);
     }
-    result.str[i] = '\0';
+
+    if (other.length > 0) {
+        strcat_s(result.str, newLength + 1, other.str);
+    }
 
     return result;
 }
 
-char& MyString::operator[](int index) {
+char MyString::operator[](size_t index) const {
     return str[index];
 }
 
-int MyString::getLength() const {
+size_t MyString::getLength() const {
     return length;
 }
 
-ostream& operator<<(ostream& out, const MyString& s) {
-    out << s.str;
-    return out;
+ostream& operator<<(ostream& os, const MyString& s) {
+    if (s.str)
+        os << s.str;
+    return os;
 }
 
-istream& operator>>(istream& in, MyString& s) {
-    char buffer[256];
-    in >> buffer;
+istream& operator>>(istream& is, MyString& s) {
+    char buffer[1000];
+    is >> buffer;
 
+    s.length = strlen(buffer);
     delete[] s.str;
-    s.length = mystrlen(buffer);
     s.str = new char[s.length + 1];
-    mystrcpy(s.str, buffer);
+    strcpy_s(s.str, s.length + 1, buffer);
 
-    return in;
+    return is;
 }
