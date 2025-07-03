@@ -55,6 +55,24 @@ public:
 
     T& operator[](int index) { return data[index]; }
     const T& operator[](int index) const { return data[index]; }
+    
+    void Append(const Array<T>& other) {
+        for (int i = 0; i < other.count; ++i) {
+            Add(other.data[i]);
+        }
+    }
 
+    Array<T>& operator=(const Array<T>& other) {
+        if (this != &other) {
+            delete[] data;
+            size = other.size;
+            grow = other.grow;
+            count = other.count;
+            data = new T[size];
+            for (int i = 0; i < count; ++i)
+                data[i] = other.data[i];
+        }
+        return *this;
+    }
 };
 #endif 
