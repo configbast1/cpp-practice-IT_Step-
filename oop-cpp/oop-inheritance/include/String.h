@@ -16,7 +16,16 @@ public:
     delete[] str;
 }
 
-
+String(const char* s) {
+    if (s) {
+        length = std::strlen(s);
+        str = new char[length + 1];
+        std::strcpy(str, s);
+    } else {
+        str = nullptr;
+        length = 0;
+    }
+}
 
 };
 
