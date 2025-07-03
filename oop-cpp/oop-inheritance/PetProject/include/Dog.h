@@ -2,3 +2,6 @@
 #define DOG_H
 
 #endif
+
+#include "Pet.h"
+#include <iostream>
