@@ -26,6 +26,15 @@ String(const char* s) {
         length = 0;
     }
 }
+String(const String& other) {
+    length = other.length;
+    if (length > 0) {
+        str = new char[length + 1];
+        std::strcpy(str, other.str);
+    } else {
+        str = nullptr;
+    }
+} 
 
 };
 
