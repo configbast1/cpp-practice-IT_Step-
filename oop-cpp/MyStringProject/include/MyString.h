@@ -1,27 +1,30 @@
 #pragma once
-
 #include <iostream>
 using namespace std;
 
 class MyString {
 private:
-    char* str;  
-    int length;  
+    char* str;
+    size_t length;
+
 public:
-    MyString();      
-    MyString(int size); 
+    MyString();
+    MyString(size_t size);
     MyString(const char* s);
     MyString(const MyString& other);
-    MyString(MyString&& other);     
+    MyString(MyString&& other) noexcept;
 
     ~MyString();
 
     MyString& operator=(const MyString& other);
-    MyString& operator=(MyString&& other);
-    MyString operator+(const MyString& other);
-    char& operator[](int index);
-    friend ostream& operator<<(ostream& out, const MyString& s);
-    friend istream& operator>>(istream& in, MyString& s);
+    MyString& operator=(MyString&& other) noexcept;
 
-    int getLength() const;
+    MyString operator+(const MyString& other) const;
+
+    char operator[](size_t index) const;
+
+    size_t getLength() const;
+
+    friend ostream& operator<<(ostream& os, const MyString& s);
+    friend istream& operator>>(istream& is, MyString& s);
 };
