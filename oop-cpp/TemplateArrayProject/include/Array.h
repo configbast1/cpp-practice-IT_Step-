@@ -43,6 +43,18 @@ public:
         size = newSize;
         if (count > size) count = size;
     }
+    
+         T GetAt(int index) const {
+        if (index >= 0 && index < count) return data[index];
+        throw std::out_of_range("Index out of range");
+    }
+
+    void SetAt(int index, const T& value) {
+        if (index >= 0 && index < count) data[index] = value;
+    }
+
+    T& operator[](int index) { return data[index]; }
+    const T& operator[](int index) const { return data[index]; }
 
 };
 #endif 
