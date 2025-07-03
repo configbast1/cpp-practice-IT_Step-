@@ -32,4 +32,5 @@ int main() {
     } else {
         std::cout << "BitStrings are equal\n";
     } 
- 
+   return 0;
+} 
