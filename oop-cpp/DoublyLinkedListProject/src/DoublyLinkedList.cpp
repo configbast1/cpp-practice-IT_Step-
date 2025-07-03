@@ -21,3 +21,16 @@ void DoublyLinkedList::push_front(int value) {
     }
     count++;
 }
+
+void DoublyLinkedList::push_back(int value) {
+    Node* newNode = new Node(value);
+    newNode->prev = tail;
+    if (tail != nullptr) {
+        tail->next = newNode;
+    }
+    tail = newNode;
+    if (head == nullptr) {
+        head = tail;
+    }
+    count++;
+}
