@@ -1,22 +1,47 @@
 #pragma once
 
-#include "Reservoir.h"
+#include <cstdio>
 
-class ReservoirArray {
+#define NAME_LENGTH 50
+#define TYPE_LENGTH 20
+
+void copyStr(char* dest, const char* src, int maxLen);
+bool isEqual(const char* a, const char* b);
+
+class Reservoir {
 private:
-    Reservoir* arr;
-    int size;
+    char name[NAME_LENGTH];
+    char type[TYPE_LENGTH];
+    double width;
+    double length;
+    double maxDepth;
 
 public:
-    ReservoirArray();
-    ~ReservoirArray();
+    Reservoir();
+    explicit Reservoir(const char* n, const char* t, double w, double l, double d);
+    Reservoir(const Reservoir& other);
+    ~Reservoir();
 
-    void add(const Reservoir& res);
-    void remove(int index);
+    void setName(const char* n);
+    void setType(const char* t);
+    void setDimensions(double w, double l, double d);
 
-    void showAll() const;
+    const char* getName() const;
+    const char* getType() const;
+    double getWidth() const;
+    double getLength() const;
+    double getMaxDepth() const;
 
-    void saveAllToText(const char* filename) const;
-    void saveAllToBinary(const char* filename) const;
-    void loadAllFromBinary(const char* filename);
+    double getVolume() const;
+    double getSurfaceArea() const;
+
+    bool isSameType(const Reservoir& other) const;
+    bool isLargerThan(const Reservoir& other) const;
+
+    void show() const;
+
+    void saveToTextFile(FILE* f) const;
+    void saveToBinaryFile(FILE* f) const;
+    void loadFromBinaryFile(FILE* f);
 };
+
