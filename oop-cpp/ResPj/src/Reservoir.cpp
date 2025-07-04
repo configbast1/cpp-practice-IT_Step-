@@ -41,3 +41,47 @@ Reservoir::Reservoir(const Reservoir& other) {
 }
 
 Reservoir::~Reservoir() {}
+
+void Reservoir::setName(const char* n) { copyStr(name, n, NAME_LENGTH); }
+void Reservoir::setType(const char* t) { copyStr(type, t, TYPE_LENGTH); }
+void Reservoir::setDimensions(double w, double l, double d) {
+    width = w; length = l; maxDepth = d;
+}
+
+const char* Reservoir::getName() const { return name; }
+const char* Reservoir::getType() const { return type; }
+double Reservoir::getWidth() const { return width; }
+double Reservoir::getLength() const { return length; }
+double Reservoir::getMaxDepth() const { return maxDepth; }
+
+double Reservoir::getVolume() const { return width * length * maxDepth; }
+double Reservoir::getSurfaceArea() const { return width * length; }
+
+bool Reservoir::isSameType(const Reservoir& other) const {
+    return isEqual(type, other.type);
+}
+
+bool Reservoir::isLargerThan(const Reservoir& other) const {
+    if (isSameType(other))
+        return getSurfaceArea() > other.getSurfaceArea();
+    return false;
+}
+
+void Reservoir::show() const {
+    cout << "Назва: " << name << endl;
+    cout << "Тип: " << type << endl;
+    cout << "Ширина: " << width << " Довжина: " << length << " Макс. глибина: " << maxDepth << endl;
+    cout << "Площа: " << getSurfaceArea() << " Обсяг: " << getVolume() << endl;
+}
+
+void Reservoir::saveToTextFile(FILE* f) const {
+    fprintf(f, "%s %s %.2f %.2f %.2f\n", name, type, width, length, maxDepth);
+}
+
+void Reservoir::saveToBinaryFile(FILE* f) const {
+    fwrite(this, sizeof(Reservoir), 1, f);
+}
+
+void Reservoir::loadFromBinaryFile(FILE* f) {
+    fread(this, sizeof(Reservoir), 1, f);
+}
