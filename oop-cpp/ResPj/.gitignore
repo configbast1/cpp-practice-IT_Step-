@@ -5,6 +5,4 @@
 reservoirs.txt
 reservoirs.bin
 
-build/
-CMakeFiles/
-CMakeCache.txt
+
