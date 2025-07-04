@@ -1,0 +1,10 @@
+*.exe
+*.obj
+*.pdb
+
+reservoirs.txt
+reservoirs.bin
+
+build/
+CMakeFiles/
+CMakeCache.txt
