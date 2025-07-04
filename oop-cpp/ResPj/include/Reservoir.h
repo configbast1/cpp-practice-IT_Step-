@@ -5,6 +5,9 @@
 #define NAME_LENGTH 50
 #define TYPE_LENGTH 20
 
+void copyStr(char* dest, const char* src, int maxLen);
+bool isEqual(const char* a, const char* b);
+
 class Reservoir {
 private:
     char name[NAME_LENGTH];
