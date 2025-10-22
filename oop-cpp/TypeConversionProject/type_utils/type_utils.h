@@ -1,12 +1,15 @@
-#ifndef TYPE_UTILS_H
-#define TYPE_UTILS_H
+#pragma once
 #include <iostream>
 #include <typeinfo>
-namespace ctd {
+
+using namespace std;
+
+namespace type_utils {
+
 template<typename T>
-void printTypeName(const T& value) {
-    std::cout << "Имя типа: " << typeid(value).name() << std::endl;
-}
+void printTypeName(const T& value);
+
 void printCharFromInt(int number);
-} 
-#endif 
+
+}
+ 
