@@ -5,4 +5,4 @@ template<typename T>
 void printTypeName(const T& value);
 
 void printCharFromInt(int number);
-#endif // TYPE_UTILS_H
+#endif 
