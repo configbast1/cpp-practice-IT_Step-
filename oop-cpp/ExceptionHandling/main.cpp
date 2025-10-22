@@ -85,13 +85,13 @@ int main() {
     }
 
     try {
-        checkPassword("abc"); // Неверный пароль
+        checkPassword("abc"); 
     } catch (const exception& e) {
         MessageBoxA(nullptr, e.what(), "Ошибка пароля", MB_OK | MB_ICONWARNING);
     }
 
     try {
-        vote("Иванов", 16); // Маленький возраст
+        vote("Иванов", 16); 
     } catch (const AgeException& e) {
         MessageBoxA(nullptr, e.what(), "Ошибка голосования", MB_OK | MB_ICONERROR);
     }
